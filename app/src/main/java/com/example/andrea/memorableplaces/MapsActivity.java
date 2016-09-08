@@ -119,7 +119,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
       Intent intent = getIntent();
       boolean addNew = intent.getBooleanExtra("addNew", false);
 
-      Log.i("addNew", String.valueOf(addNew));
       if (addNew)
       {
          locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -134,7 +133,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
          Place place = MainActivity.myPlaces.get(locationInfo);
          LatLng latLng = place.get_LatLng();
          mMap.addMarker(new MarkerOptions().position(latLng).title(place.get_address()));
-         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
       }
 
    }
@@ -186,7 +185,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
       double lat = location.getLatitude();
       double lng = location.getLongitude();
       LatLng latLng = new LatLng(lat, lng);
-      mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+      mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
    }
 
    @Override
