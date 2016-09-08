@@ -27,16 +27,8 @@ public class Place
       this._lng = lng;
    }
 
-   /**
-    * @param address the first line of the address
-    * @param latLng the latidute and longitude of the place
-    */
-   public Place(String address, LatLng latLng)
-   {
-      this._address  = address;
-      this._lat = latLng.latitude;
-      this._lng = latLng.longitude;
-   }
+
+
    public Place(){}
 
 
@@ -82,6 +74,16 @@ public class Place
    {
       this._lat = latlng.latitude;
       this._lng = latlng.longitude;
+   }
+
+   public void set_lat(Double _lat)
+   {
+      this._lat = _lat;
+   }
+
+   public void set_lng(Double _lng)
+   {
+      this._lng = _lng;
    }
 
    public LatLng get_LatLng()

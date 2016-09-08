@@ -155,7 +155,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
          if (addresses != null && addresses.size() > 0)
          {
             label = addresses.get(0).getAddressLine(0);
-            Place place = new Place(label,latLng);
+            double lat = latLng.latitude;
+            double lng  = latLng.longitude;
+            Place place = new Place(label, lat, lng);
             MainActivity.myPlaces.add(place);
 
          }
